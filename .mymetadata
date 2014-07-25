@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="twovv-capt"
+  id="myeclipse.1339720513003"
+  context-root="/twovv-capt"
+  j2ee-spec="6.0"
+  archive="twovv-capt.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
