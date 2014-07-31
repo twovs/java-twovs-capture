@@ -61,5 +61,16 @@ java 模仿QQ图片验证码-源代码
 	
 4. 在struts2配置文件中配置Action结果			
 
-二、在Spring MVC中使用：
+二、前台界面调用：
 
+	<input type="text" name="capt" id="capt" value="请输入下图中的验证码" autocomplete="off" class="ipt">
+	<span class="bspan lip">
+		<img id="a" src="/getcapt.gif" alt="验证码图片" title="验证码图片" width="130px" height="53px">
+		<a id="b" href="javascript:return false;">认不得？换一张</a>
+	</span>
+	
+   添加以下js代码实现点击图片、文字切换验证码图片
+  <script type="/text/javascript"> 
+   //刷新验证码
+$(function(){$("#a").click(function(){$("#a").attr("src","/getcapt.gif?"+Math.floor(Math.random()*100)).fadeIn()});$("#b").click(function(){$("#a").attr("src","/getcapt.gif?"+Math.floor(Math.random()*100)).fadeIn()})});
+</script>
