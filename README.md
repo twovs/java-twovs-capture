@@ -3,6 +3,7 @@ java-twovs-capture
 
 java 模仿QQ图片验证码-源代码
 
+<img src="http://www.stayasone.com/getCaptImg.htm?25"/>
 
 这是一个普通的java项目，依赖servlet实现，将项目生成的class文件原样打包，作为jar引入到项目中即可。
 
