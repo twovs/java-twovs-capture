@@ -3,7 +3,7 @@ java-twovs-capture
 
 java 模仿QQ图片验证码-源代码
 
-<img src="http://www.stayasone.com/getCaptImg.htm?25"/>
+<img src="https://id.twovs.com/getcapt.gif"/>
 
 这是一个普通的java项目，依赖servlet实现，将项目生成的class文件原样打包，作为jar引入到项目中即可。
 
@@ -26,28 +26,10 @@ java 模仿QQ图片验证码-源代码
 
 		<img src="/getCaptImg.jpg" /> <br/>
 		<input type="text" name="captcha4j" value="" />
-二、Struts2示例：
+二、示例：
 3. Action处理
-
-	import javax.servlet.http.HttpServletRequest;
-
-	import org.apache.struts2.interceptor.ServletRequestAware;
-	
-	import com.twovv.captcha4j.Constants;
-	import com.opensymphony.xwork2.ActionSupport;
-	
-	public class TestCapt extends ActionSupport implements ServletRequestAware {
-		
-		private HttpServletRequest request;
-		
-		public void setServletRequest(HttpServletRequest request) {
-			this.request = request;
-		}
-	
-		@Override
-		public String execute() throws Exception {
-			String expectedCapt4j = (String)request.getSession()
-		    .getAttribute(Constants.JCAP_SESSION_KEY);
+		String expectedCapt4j = (String)javax.servlet.http.HttpServletRequest.getSession()
+		    .getAttribute(com.twovv.captcha4j.Constants.JCAP_SESSION_KEY);
 		String inputCapt4j = request.getParameter("captcha4j");
 		
 		if (inputCapt4j == null || !inputCapt4j.equalsIgnoreCase(expectedCapt4j))
@@ -60,7 +42,7 @@ java 模仿QQ图片验证码-源代码
 	
 	}	
 	
-4. 在struts2配置文件中配置Action结果			
+4. 将验证结果反馈会前台			
 
 二、前台界面调用：
 
